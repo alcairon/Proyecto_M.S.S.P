@@ -3,9 +3,9 @@
 @section("content")
 <h1>
 	Listado De  Pacientes
-	<img class="logo" src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>
+	<!--<img class="logo" src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>-->
 </h1>
-<div>
+<!--<div>
 		<ul>
 			   <li>
 					<a href="/home">Inicio</a>
@@ -46,8 +46,8 @@
 				
 		</ul>
 	</div>
-
-<a href="/home" class="btn btn-primary btn-sm">Inicio</a>
+-->
+<!--<a href="/home" class="btn btn-primary btn-sm">Inicio</a>-->
 <a href="/paciente/create" class="btn btn-success btn-sm">Crear</a>
 <table id="tabla_pacientes" class="table table-bordered table-striped">
 	

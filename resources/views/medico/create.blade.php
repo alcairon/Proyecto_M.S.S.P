@@ -1,10 +1,10 @@
-@extends("layouts.app2")
+@extends("layouts.app")
 
 @section("content")
 
 <h1>
 	Nueva Médico
-	<img class=" width=841.89px height=595.28px " src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>
+<!--<img class=" width=841.89px height=595.28px " src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>-->
 </h1>
 <form   method="POST" class="form-horizontal" action="{{url('/medico')}}">
 	<!--<input type="hidden" name="_method" value="POST">-->

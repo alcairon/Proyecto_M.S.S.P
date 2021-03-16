@@ -15,7 +15,7 @@ ul{
 	width: 100%;   
 	text-align: center;
 	margin-top:2%;
-	margin-left:23%;
+	margin-left:20%;
 	/*background-color:white;*/
 }
 ul li{
@@ -51,9 +51,11 @@ ul li a:hover::before{
 	
 	
 	.logoApp{
-		width:200px;
-		height:200px;
+		width:30%;
+		height:15%;
 		margin-left:70px;
+		margin-bottom:4%;
+		margin-top:2%;
 	}
 	/*
 	<h1>@lang("mensajes.saludo")</h1> si queremos mostrar el saludo en la pagina poner esto fuera
@@ -75,8 +77,11 @@ ul li a:hover::before{
 	@endif
 	<div>
 	   <div class="col-md-8">
-			<img class="logoApp" src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>
-			
+		   
+		 <a href="/">
+			<img class="logoApp" src='/img/Medical services storage program.png'>
+		  </a>	
+		   
           <ul>
 			  
               <li>
@@ -113,6 +118,7 @@ ul li a:hover::before{
               </li>
 				
           </ul>
+
 </div>
 
 		@yield("content")

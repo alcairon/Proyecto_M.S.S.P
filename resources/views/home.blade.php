@@ -4,6 +4,7 @@
 @section('content')
 <div class="container" id ="container">
     <div class="row justify-content-center">
+
 		<img class="inicioUrgencia" src='img/InicioUrgencias.jpg'>
 		
         <!--<div class="col-md-8">

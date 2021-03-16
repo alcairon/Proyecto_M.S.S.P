@@ -198,21 +198,78 @@ body {
 #tabla_urgencias_wrapper{
 	background-color:white;
 	border-radius:5px;
-	margin-top:10px;
-	
+	margin-bottom: 10%;
+	border: 2px solid black;
 }
 #tabla_medicos_wrapper{
 	background-color:white;
 	border-radius:5px;
-	margin-top:10px;
+	margin-bottom: 10%;
+	border: 2px solid black;
 	
 }
 #tabla_pacientes_wrapper{
 	background-color:white;
 	border-radius:5px;
-	margin-top:10px;
+	margin-bottom: 10%;
+	border: 2px solid black;
 	
 }
+	/***************************************************************/
+			
+	a{
+		margin-top:2%;
+		margin-bottom:2%;
+	}
+	
+	
+ul{
+   	transform: translate(0,-50%);
+	width: 100%;   
+	text-align: center;
+	margin-top:2%;
+	margin-left:20%;
+	/*background-color:white;*/
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+ul li a{
+    text-decoration: none;
+    color: #262626;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    padding: 7px 7px;
+    overflow: hidden;
+	font-size:20px;
+	font-weight: bold;
+}
+ul li a::before{
+    content: '';
+    position: absolute;
+    top: calc(100% - 5px);   
+	left: -50%;
+    width: 30%;   
+	height: 5px;
+    background: #3498db;
+    transition: .5s;
+}
+	
+ul li a:hover::before{
+    left: 50%;
+}
+	
+	
+	.logoApp{
+		width:35%;
+		height:15%;
+		margin-left:50px;
+		margin-bottom:4%;
+		margin-top:2%;
+	}
 </style>
 	  
 
@@ -229,6 +286,51 @@ body {
 		</div>
 	@endif
 	<div>
+		<div class="col-md-8">
+		   
+		 <a href="/">
+			<img class="logoApp" src='/img/Medical services storage program.png'>
+		  </a>	
+		   
+          <ul>
+			  
+              <li>
+                    <a href="/urgencia">Urgencias</a>
+              </li>
+			  
+			  <li><a>|</a></li>
+			  
+              <li>
+                    <a href="/medico">Medicos</a>
+              </li>
+			  
+			<li><a>|</a></li>
+
+			  
+              <li>
+                    <a href="/paciente">Pacientes</a>
+              </li>
+			  
+			<li><a>|</a></li>
+
+              
+			  <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+							
+                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                {{ __('Salir') }}
+                            </a>
+						
+                        </form>
+              </li>
+				
+          </ul>
+
+</div>
+
 	   @yield("content")
 	</div>
 </div>

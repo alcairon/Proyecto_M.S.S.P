@@ -1,4 +1,4 @@
-@extends("layouts.app2")
+@extends("layouts.app3")
 
 @section("content")
 <div id=contenedor>
@@ -7,7 +7,6 @@
 		
 		<h1>
 			Vista del médico {{$medico->id}}
-				<img class=" width=841.89px height=595.28px " src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>
 		</h1>
 	</div>
 				
@@ -67,24 +66,14 @@
 		background-color:white;
 		width:100%;
 	}
-	img{
-		width:120px;
-		height:120px;
-		
-	}
+
 	
 	#contenedor{
-		padding-left:20%;
-		
-		padding-top:10%;
-		
-		padding-right:20%;
+		padding-left:15%;
+		margin-right:14%;
+		padding-top:1%;
 	}
-	
-	body{
-		background-color:lightblue;
-	}
-	
+
 	
 	/*
 	<h1>@lang("mensajes.saludo")</h1> si queremos mostrar el saludo en la pagina poner esto fuera

@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app3')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-			<img class=" width=841.89px height=595.28px " src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>
-            <div class="card">
+				<!--<img class="logoApp" src='/img/Medical services storage program.png'>-->
+			<div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -65,9 +65,16 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Registrarse') }}
                                 </button>
-                            </div>
+
+								<button type="submit" class="btn btn-primary">
+									 <a id=back name=Registrarse class="underline text-sm text-gray-600 hover:text-gray-900"  href="/ ">
+										 Atras
+									</a>
+								</button>
+							</div>
+							 
                         </div>
                     </form>
                 </div>
@@ -85,6 +92,9 @@
 	#login{
 		color:white;
 	}
+	#back{
+			color:white;
+		}
 	
 	
 	img{
@@ -95,5 +105,13 @@
 	body{
 		background-color:lightblue;
 	}
+	/*.logoApp{
+		width:40%;
+		height:20%;
+		margin-left:30%;
+		margin-bottom:4%;
+		margin-top:4%;
+	}*/
+	
 </style>
 @endsection
