@@ -25,7 +25,7 @@ class StoreMedico extends FormRequest
     {
          return [
 			
-			'id' => 'required',
+
 			'nombre' => 'required',
 			'apellido' => 'required',
 			'dni' => 'required',

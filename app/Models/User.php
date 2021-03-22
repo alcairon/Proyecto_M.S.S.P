@@ -16,6 +16,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+	
+		public $timetamps = false;
+
     protected $fillable = [
         'name',
         'email',

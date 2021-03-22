@@ -9,11 +9,11 @@
 
 
 <style>
-	/*
+	
 	.container {
-		margin: 40px !important;
+		    max-width: 1140000px;
 	}
-	*/
+	
 	/*
 	<h1>@lang("mensajes.saludo")</h1> si queremos mostrar el saludo en la pagina poner esto fuera
 		*/*{
@@ -24,12 +24,6 @@
 html {
     font-family:'roboto';
     font-size:16px;
-}
-body {
-    background-color:#EEEFF0;
-    max-width:1000px;
-    margin:0 auto;
-
 }
 
 .c-listapplet-container {
@@ -199,29 +193,44 @@ body {
 	background-color:white;
 	border-radius:5px;
 	margin-bottom: 10%;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
+	padding-left:5%;
+	padding-right:5%;
+	padding-top:2%;
+	padding-bottom:1%;
+	margin-top:1%;
+
+	
 }
 #tabla_medicos_wrapper{
 	background-color:white;
 	border-radius:5px;
 	margin-bottom: 10%;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
+	padding-left:5%;
+	padding-right:5%;
+	padding-top:2%;
+	padding-bottom:1%;
+	margin-top:1%;
+
 	
 }
 #tabla_pacientes_wrapper{
 	background-color:white;
 	border-radius:5px;
 	margin-bottom: 10%;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
+	padding-left:5%;
+	padding-right:5%;
+	padding-top:2%;
+	padding-bottom:1%;
+	margin-top:1%;
+
 	
 }
 	/***************************************************************/
 			
-	a{
-		margin-top:2%;
-		margin-bottom:2%;
-	}
-	
+
 	
 ul{
    	transform: translate(0,-50%);
@@ -264,12 +273,71 @@ ul li a:hover::before{
 	
 	
 	.logoApp{
-		width:35%;
-		height:15%;
-		margin-left:50px;
-		margin-bottom:4%;
-		margin-top:2%;
+		width: 25%;
+		height: auto;
+		margin-left:45%;
+		margin-bottom:1%;
+
+		
 	}
+	
+	.col-md-8{
+		text-align:center;
+	}
+	
+	.modal-header{
+		background-color:lightblue;
+  		border-top-left-radius: 25px;
+		border-top-right-radius: 25px;
+	}
+	.modal-content{
+  		border-radius: 25px;
+	}
+	
+	#botonCerrar{
+		
+	}
+
+	body{
+		/*background-color:lightblue;*/
+		background-image:url("img/fondoWeb.jpg");
+		background-size:100% 100%;
+		background-repeat:no-repeat;
+	}
+	
+	.granContenedor{
+		background-color:white;
+		border-radius:1%;
+
+	}
+	
+	.contenedorCentral{
+		width: 96%;
+		max-width: 1500px;
+		margin: 0 auto;
+	}
+	
+	
+	
+	#titulo{
+		margin-left:2%;
+		padding-top:1%;
+
+	}
+	
+	#new{
+		margin-left: 87%;
+		padding:5px 20px 5px 20px ;
+		font-size:15px;
+		font-weight: bolder;
+	}
+	
+	#botonCentrar{
+		    margin-left: 13%;
+	}
+	
+
+
 </style>
 	  
 
@@ -285,12 +353,13 @@ ul li a:hover::before{
 			</ul>
 		</div>
 	@endif
-	<div>
+	<div class="contenedorCentral">
 		<div class="col-md-8">
-		   
+		   	
 		 <a href="/">
 			<img class="logoApp" src='/img/Medical services storage program.png'>
 		  </a>	
+			
 		   
           <ul>
 			  
@@ -301,7 +370,7 @@ ul li a:hover::before{
 			  <li><a>|</a></li>
 			  
               <li>
-                    <a href="/medico">Medicos</a>
+                    <a href="/medico">Médicos</a>
               </li>
 			  
 			<li><a>|</a></li>

@@ -9,13 +9,8 @@
 <form   method="POST" class="form-horizontal" action="{{url('/urgencia')}}">
 	<!--<input type="hidden" name="_method" value="POST">-->
 @csrf
-	<div class="form-group">
-	  <label class="control-label col-sm-2" for="id">Id:</label>
-	  <div class="col-sm-10">
-		<input type="text" class="form-control" id="id" placeholder="id" name="id" style="width: 970px;">
-	  </div>
-	</div>
 	
+
 	<div class="form-group">
       <label class="control-label col-sm-2" for="element">Fecha Entrada:</label>
       <div class="col-sm-10">
@@ -83,9 +78,7 @@
 
 		
 	
-	body{
-		background-color:lightblue;
-	}
+
 	
 	img{
 		width:150px;

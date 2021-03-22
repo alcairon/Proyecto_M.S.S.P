@@ -25,7 +25,6 @@ class StorePaciente extends FormRequest
     {
          return [
 			
-			'id' => 'required',
 			'nombre' => 'required',
 			'apellido' => 'required',
 			'dni' => 'required',

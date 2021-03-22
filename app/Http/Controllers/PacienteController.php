@@ -81,7 +81,10 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datos = $request->all();
+		Paciente::findOrFail($id)->update($datos);
+		
+		return redirect ("paciente");
     }
 
     /**

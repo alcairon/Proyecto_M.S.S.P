@@ -2,44 +2,45 @@
 @extends("layouts.app3")
 
 @section("content")
-<div id=contenedor>
+<div class="modal fade" id="show">
+	<div id=contenedor>
 
-	<div id=title class="card-header">
-		<h1>
-			Vista de la Urgencia {{$urgencia->id}}
-		</h1>
+		<div id=title class="card-header">
+			<h1>
+				Vista de la Urgencia {{$urgencia->id}}
+			</h1>
+		</div>
+
+			<div id=element>
+				Id : {{$urgencia->id}}
+			</div>		
+
+			<div id=element>
+				Fecha Entrada : {{$urgencia->f_entrada->format("d/m/Y")}}
+			</div>
+
+			<div id=element>
+				Tipo Urgencia : {{$urgencia->categoria->tipo_urgencia}}
+			</div>
+
+			<div id=element>
+				Tratamiento : {{$urgencia->trat->tratamiento}}
+			</div>
+
+			<div id=element>
+				Id Paciente : {{$urgencia ->pacient->nombre}}
+			</div>
+
+			<div id=element>
+				Id Medico :{{$urgencia->doctor->nombre}}
+			</div>
+
+
+		<a href = "/urgencia" class="btn btn-primary btn-sm">Volver al listado</a>
+
 	</div>
-				
-		<div id=element>
-			Id : {{$urgencia->id}}
-		</div>		
-	
-		<div id=element>
-			Fecha Entrada : {{$urgencia->f_entrada->format("d/m/Y")}}
-		</div>
-	
-		<div id=element>
-			Tipo Urgencia : {{$urgencia->categoria->tipo_urgencia}}
-		</div>
-	
-		<div id=element>
-			Tratamiento : {{$urgencia->trat->tratamiento}}
-		</div>
-	
-		<div id=element>
-			Id Paciente : {{$urgencia ->pacient->nombre}}
-		</div>
-	
-		<div id=element>
-			Id Medico :{{$urgencia->doctor->nombre}}
-		</div>
-	
-					
-	<a href = "/urgencia" class="btn btn-primary btn-sm">Volver al listado</a>
-	
+
 </div>
-
-
 
 <style>
 	

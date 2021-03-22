@@ -25,7 +25,7 @@ class StoreUrgencia extends FormRequest
     {
          return [
 			
-			'id' => 'required',
+			
 			'f_entrada'=>'required','date',
 			
 			'tratamiento' => 'required',

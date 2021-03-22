@@ -9,12 +9,12 @@
 <form   method="POST" class="form-horizontal" action="{{url('/medico')}}">
 	<!--<input type="hidden" name="_method" value="POST">-->
 @csrf
-	<div class="form-group">
+	<!--<div class="form-group">
 	  <label class="control-label col-sm-2" for="id">Id:</label>
 	  <div class="col-sm-10">
 		<input type="text" class="form-control" id="id" placeholder="id" name="id">
 	  </div>
-	</div>
+	</div>-->
 	
 	<div class="form-group">
       <label class="control-label col-sm-2" for="nombre">Nombre:</label>

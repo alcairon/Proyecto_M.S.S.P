@@ -22,8 +22,7 @@ class Urgencia extends Model
 	
 	protected $primaryKey = 'id';
 	
-	
-	
+
 	
 	public function pacient()
 		{

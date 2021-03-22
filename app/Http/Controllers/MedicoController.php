@@ -81,7 +81,10 @@ class MedicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+		$datos = $request->all();
+		Medico::findOrFail($id)->update($datos);
+		
+		return redirect ("medico");
     }
 
     /**

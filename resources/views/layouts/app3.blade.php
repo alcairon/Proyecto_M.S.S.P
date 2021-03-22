@@ -14,14 +14,20 @@
 	}
 		.logoApp{
 		width:30%;
-		height:20%;
+		height:auto;
 		margin-left:35%;
 		margin-bottom:4%;
 		margin-top:4%;
 	}
-	/*
-	<h1>@lang("mensajes.saludo")</h1> si queremos mostrar el saludo en la pagina poner esto fuera
-		*/
+	
+
+	
+	body{
+		/*background-color:lightblue;*/
+		background-image:url("img/fondoWeb.jpg");
+		background-size:100% 100%;
+		background-repeat:no-repeat;
+	}
 </style>
 	  
 

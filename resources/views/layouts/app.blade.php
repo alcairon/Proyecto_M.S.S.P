@@ -9,7 +9,15 @@
 
 
 <style>
-		
+			
+	*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+	
+	
+	
 ul{
    	transform: translate(0,-50%);
 	width: 100%;   
@@ -47,19 +55,27 @@ ul li a::before{
 	
 ul li a:hover::before{
     left: 50%;
-}
-	
+}	
 	
 	.logoApp{
-		width:30%;
-		height:15%;
-		margin-left:70px;
-		margin-bottom:4%;
-		margin-top:2%;
+		width: 30%;
+		height: auto;
+		margin-left:45%;
+		margin-bottom:5%
+
 	}
-	/*
-	<h1>@lang("mensajes.saludo")</h1> si queremos mostrar el saludo en la pagina poner esto fuera
-		*/
+	
+	.col-md-8{
+		text-align:center;
+	}
+	body{
+		/*background-color:lightblue;*/
+		background-image:url("img/fondoWeb.jpg");
+		background-size:100% 100%;
+		background-repeat:no-repeat;
+	}
+	
+	
 </style>
 	  
 

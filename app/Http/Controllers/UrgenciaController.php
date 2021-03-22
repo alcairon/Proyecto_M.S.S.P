@@ -23,15 +23,8 @@ class UrgenciaController extends Controller
     }
 
     public function index()
-    {
-		$urgencia=Urgencia::all();
-		
-		//$paciente = Urgencia::with('paciente')->first();
-		//return view("paciente.detalle", compact("paciente"));
-		
-		
-		//$paciente = Paciente::with('paciente')->get();
-		return view("urgencia.index",compact("urgencia"));
+    {	
+	return view("urgencia.index", [ 'urgencia' => Urgencia::all(), 'pacientes' => Paciente::all() ,'medicos' => Medico::all(),'categorias' => Categoria::all(), 'tratamientos' => 	Tratamiento::all() ]);
 		
 		
     }
@@ -80,8 +73,7 @@ class UrgenciaController extends Controller
      */
     public function edit($id)
     {
-        $urgencia = Urgencia::find($id);
-		return view ("urgencia.edit", compact ("urgencia"));
+		return view("urgencia.edit", [ 'urgencia' => Urgencia::find($id), 'pacientes' => Paciente::all() ,'medicos' => Medico::all(),'categorias' => Categoria::all(), 'tratamientos' => Tratamiento::all() ]);
 		
     }
 
@@ -94,9 +86,8 @@ class UrgenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $datos=$request->all;
-		$urgencia = Urgencia::find($id);
-		$urgencia->update($datos);
+        $datos=$request->all();
+		Urgencia::find($id)->update($datos);
 		
 		return redirect ("urgencia");
     }
@@ -114,4 +105,7 @@ class UrgenciaController extends Controller
 		
 		return redirect('urgencia');
     }
+	
+	
+	
 }
