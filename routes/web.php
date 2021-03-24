@@ -6,7 +6,6 @@ use App\Http\Controllers\UrgenciaController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\CalendarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,13 +27,7 @@ Route::get('/', function () {
 Route::resource("/urgencia",UrgenciaController::class);
 Route::resource("/medico",MedicoController::class);
 Route::resource("/paciente",PacienteController::class);
-//Route::resource("/categoria",CategoriaController::class);
-//Route::resource("/calendarios",CalendarioController::class);
-
-
-//Route::view('customers','customers');
-//Route::view('Calendario','Calendario');
-
+Route::resource("/categoria",CategoriaController::class);
 
 Auth::routes();
 

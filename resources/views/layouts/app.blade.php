@@ -11,25 +11,34 @@
 <style>
 			
 	*{
-    margin:0;
+   /* margin:0;
     padding:0;
-    box-sizing:border-box;
+    box-sizing:border-box;*/
 }
-	
-	
+	.container {
+max-width: 1140000px;
+    padding-right: 0px;
+    padding-left: 0px; 
+    margin-right: auto;
+    margin-left: auto;
+	}
 	
 ul{
+	width: 100%;   
+	margin-bottom:5%;
+	/*
    	transform: translate(0,-50%);
 	width: 100%;   
 	text-align: center;
 	margin-top:2%;
-	margin-left:20%;
+	margin-left:20%;*/
 	/*background-color:white;*/
 }
 ul li{
-    list-style: none;
+        list-style: none;
     display: inline-block;
     margin-top: 5px;
+	margin-left:2%;
 }
 ul li a{
     text-decoration: none;
@@ -56,25 +65,46 @@ ul li a::before{
 ul li a:hover::before{
     left: 50%;
 }	
-	
-	.logoApp{
-		width: 30%;
-		height: auto;
-		margin-left:45%;
-		margin-bottom:5%
 
-	}
 	
 	.col-md-8{
 		text-align:center;
 	}
 	body{
 		/*background-color:lightblue;*/
-		background-image:url("img/fondoWeb.jpg");
+		background-image:url("img/OtroFondo.jpg");
 		background-size:100% 100%;
 		background-repeat:no-repeat;
 	}
+		.logoApp{
+		width: 100%;
+		height: auto;
+		margin-left:20%;
+		margin-bottom:5%
+
+		
+	}
 	
+	
+	#barraNavegacion {
+  background-color: white;
+	}
+	
+	
+	.dropdown{
+		float: right;
+    	position: static;
+		margin-top:2%;
+		margin-right:2%;
+		/*margin-left:45%;*/
+	}
+	
+	.dropdown-menu{
+		padding-left:2%;
+		width: 2%;
+	}
+	
+
 	
 </style>
 	  
@@ -91,15 +121,14 @@ ul li a:hover::before{
 			</ul>
 		</div>
 	@endif
-	<div>
-	   <div class="col-md-8">
-		   
-		 <a href="/">
-			<img class="logoApp" src='/img/Medical services storage program.png'>
-		  </a>	
-		   
-          <ul>
-			  
+		<div id="barraNavegacion">
+  <ul>
+			<li>
+			  	<a href="/">
+					<img class="logoApp" src='/img/minilogo.png'>
+				  </a>	
+	  		</li>
+	  
               <li>
                     <a href="/urgencia">Urgencias</a>
               </li>
@@ -107,7 +136,7 @@ ul li a:hover::before{
 			  <li><a>|</a></li>
 			  
               <li>
-                    <a href="/medico">Medicos</a>
+                    <a href="/medico">Médicos</a>
               </li>
 			  
 			<li><a>|</a></li>
@@ -116,27 +145,39 @@ ul li a:hover::before{
               <li>
                     <a href="/paciente">Pacientes</a>
               </li>
+	  
+	  			<li><a>|</a></li>
+
 			  
-			<li><a>|</a></li>
+              <li>
+                    <a href="/categoria">Tipos De Urgencias</a>
+              </li>
+			  
+			  
+			
+              
+			 
+				<li class="dropdown " >
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						{{ Auth::user()->name}}
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							
+							<li class="minilist">
+								<a href="{{ route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
+								<form id ="logout-form" method="POST" action="{{ route('logout')}}">
+									@csrf
+								</form>
+							</li>
+						</ul>
+					</li>
+				
 
               
-			  <li>
-                    <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-							
-                            <a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                {{ __('Salir') }}
-                            </a>
-						
-                        </form>
-              </li>
-				
           </ul>
+  
+  </div>
 
-</div>
 
 		@yield("content")
 	</div>
-</div>

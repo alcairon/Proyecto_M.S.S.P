@@ -1,4 +1,4 @@
-@extends("layouts.app3")
+@extends("layouts.appVista")
 
 @section("content")
 <div id=contenedor>

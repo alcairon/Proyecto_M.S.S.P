@@ -1,4 +1,4 @@
-@extends("layouts.app2")@section("content")
+@extends("layouts.appVista")@section("content")
 <div class="granContenedor">
 	<h1 id="titulo">
 		Listado De Pacientes
@@ -14,8 +14,8 @@
 		class="ver"
 		data-toggle="modal"
 		data-target="#myModalCrear"
-		>Crear</a
-	>
+		><i class="material-icons dp48">library_add</i>
+	</a>
 
 	<!-- Modal Crear -->
 	<div
@@ -161,8 +161,9 @@
 						class="ver"
 						data-toggle="modal"
 						data-target="#myModal_{{$paciente->id}}"
-						><button type="button" class="btn btn-secondary">
-							<svg
+						><button type="button" class="btn btn-show">
+						<i class="material-icons dp48">remove_red_eye</i>
+							<!--<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="16"
 								height="16"
@@ -174,8 +175,9 @@
 								<path
 									d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
 								></path>
-							</svg></button
-					></a>
+							</svg>-->
+						</button>
+					</a>
 				</td>
 
 				<!-- Modal -->
@@ -252,8 +254,9 @@
 						class="ver"
 						data-toggle="modal"
 						data-target="#myModalEdit_{{$paciente->id}}"
-						><button type="button" class="btn btn-secondary" id="botonCentrar">
-							<svg
+						><button type="button" class="btn btn-edit" id="botonCentrar">
+						<i class="material-icons dp48">border_color</i>
+							<!--<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="16"
 								height="16"
@@ -268,7 +271,8 @@
 									fill-rule="evenodd"
 									d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
 								></path>
-							</svg></button
+							</svg>-->
+						</button
 					></a>
 				</td>
 				<!-- Modal Edit -->
@@ -380,8 +384,9 @@
 				<td>
 					<form method="POST" action="/paciente/{{$paciente->id}}">
 						<!--<input class="btn btn-danger" type="submit" value="Borrar" />-->
-						<button id="botonCentrar" class="btn btn-secondary" type="submit">
-							<svg
+						<button id="botonCentrar" class="btn btn-delete" type="submit">
+							<i class="material-icons dp48">remove_circle_outline</i>
+							<!--<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="16"
 								height="16"
@@ -392,7 +397,7 @@
 								<path
 									d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"
 								></path>
-							</svg>
+							</svg>-->
 						</button>
 						<input type="hidden" name="_method" value="DELETE" />
 						@csrf

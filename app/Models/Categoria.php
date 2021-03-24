@@ -14,7 +14,9 @@ class Categoria extends Model
 	 protected $primaryKey = 'id';
 	
 	
-	public $timetamps = false;
+	public $timestamps = false;
+	
+	public $table = "categorias";
 	
 	public function urgencias()
 		{

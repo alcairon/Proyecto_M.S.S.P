@@ -1,20 +1,21 @@
-@extends("layouts.appVista") @section("content")
+@extends("layouts.appVista")@section("content")
 <div class="granContenedor">
 	<h1 id="titulo">
-		Listado De Médicos
+		Listado De Tipos de Urgencias
 		<!--<img class="logo" src='https://upload.wikimedia.org/wikipedia/commons/1/1e/Servicio_canario_de_salud_%28SCS%29.svg'>-->
 	</h1>
+
 	<!--<a href="/home" class="btn btn-primary btn-sm">Inicio</a>-->
-	<!--<a href="/medico/create" class="btn btn-success btn-sm">Crear</a>-->
+	<!--<a href="/categoria/create" class="btn btn-success btn-sm">Crear</a>-->
 	<a
-		href="/medico/create"
+		href="/categoria/create"
 		class="btn btn-success btn-sm"
 		id="new"
 		class="ver"
 		data-toggle="modal"
 		data-target="#myModalCrear"
-		><i class="material-icons dp48">library_add</i></a
-	>
+		><i class="material-icons dp48">library_add</i>
+	</a>
 
 	<!-- Modal Crear -->
 	<div
@@ -29,7 +30,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">
-						Crear Medico
+						Crear nuevo Tipo de Urgencia
 					</h5>
 
 					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -37,61 +38,36 @@
 						</button>-->
 				</div>
 				<div class="modal-body">
-					<form method="POST" class="form-horizontal" action="{{url('/medico')}}">
+					<form method="POST" class="form-horizontal" action="{{url('/categoria')}}">
 						<!--<input type="hidden" name="_method" value="POST">-->
 						@csrf
 
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="nombre">Nombre:</label>
+							<label class="control-label " for="tipo_urgencia">Tipo de Urgenica:</label>
 							<div class="col-sm-10">
 								<input
 									type="text"
 									class="form-control"
-									id="nombre"
-									placeholder="nombre"
-									name="nombre"
+									id="tipo_urgencia"
+									placeholder="Tipo de Urgencia"
+									name="tipo_urgencia"
 								/>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="apellido">Apellido:</label>
+							<label class="control-label " for="descripcion_urgencia">Descripciรณn:</label>
 							<div class="col-sm-10">
 								<input
 									type="text"
 									class="form-control"
-									id="apellido"
-									placeholder="apellido"
-									name="apellido"
+									id="descripcion_urgencia"
+									placeholder="Descripciรณn"
+									name="descripcion_urgencia"
 								/>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="dni">Dni:</label>
-							<div class="col-sm-10">
-								<input
-									type="text"
-									class="form-control"
-									id="dni"
-									placeholder="dni"
-									name="dni"
-								/>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="telefono">Teléfono:</label>
-							<div class="col-sm-10">
-								<input
-									type="text"
-									class="form-control"
-									id="telefono"
-									placeholder="telefono"
-									name="telefono"
-								/>
-							</div>
-						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<button type="submit" class="btn btn-info">Guardar</button>
@@ -115,20 +91,16 @@
 
 	<!-------------------->
 
-	<table id="tabla_medicos" class="table table-bordered table-striped">
+	<table id="tabla_categorias" class="table table-bordered table-striped">
 		<thead>
 			<tr>
 				<th hidden>Id</th>
 
 				<th>Id</th>
 
-				<th>Nombre</th>
+				<th>Tipo de Urgencia</th>
 
-				<th>Apellido</th>
-
-				<th>DNI</th>
-
-				<th>Teléfono</th>
+				<th>Descripciรณn</th>
 
 				<th>Ver</th>
 
@@ -139,42 +111,26 @@
 		</thead>
 
 		<tbody>
-			@foreach ($medico as $medico)
+			@foreach ($categoria as $categoria)
 
 			<tr>
-				<td hidden>{{$medico->id}}</td>
+				<td hidden>{{$categoria->id}}</td>
 
-				<td>{{$medico->id}}</td>
+				<td>{{$categoria->id}}</td>
 
-				<td>{{$medico->nombre}}</td>
+				<td>{{$categoria->tipo_urgencia}}</td>
 
-				<td>{{$medico->apellido}}</td>
+				<td>{{$categoria->descripcion_urgencia}}</td>
 
-				<td>{{$medico->dni}}</td>
-
-				<td>{{$medico->telefono}}</td>
 
 				<td>
 					<a
-						data-id="{{$medico->id}}"
+						data-id="{{$categoria->id}}"
 						class="ver"
 						data-toggle="modal"
-						data-target="#myModal_{{$medico->id}}"
+						data-target="#myModal_{{$categoria->id}}"
 						><button type="button" class="btn btn-show">
 						<i class="material-icons dp48">remove_red_eye</i>
-							<!--<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								fill="currentColor"
-								class="bi bi-eye-fill"
-								viewBox="0 0 16 16"
-							>
-								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"></path>
-								<path
-									d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
-								></path>
-							</svg>-->
 						</button>
 					</a>
 				</td>
@@ -182,47 +138,40 @@
 				<!-- Modal -->
 				<div
 					class="modal fade"
-					id="myModal_{{$medico->id}}"
+					id="myModal_{{$categoria->id}}"
 					tabindex="-1"
 					role="dialog"
-					aria-labelledby="exampleModalLabel"
+					aria-labelledby="exampleModalLabel"tabla_pacientes_wrapper
 					aria-hidden="true"
 				>
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">
-									Medico {{$medico->id}}
+									Categoria {{$categoria->id}}
 								</h5>
+
 								<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						  <span aria-hidden="true">&times;</span>
-							</button>-->
+						</button>-->
 							</div>
 							<div class="modal-body">
 								<form>
 									<div class="form-group">
 										<label for="recipient-name" class="col-form-label"
-											>Id:{{$medico->id}}</label
+											>Id:{{$categoria->id}}</label
 										>
 									</div>
+
 									<div class="form-group">
 										<label for="message-text" class="col-form-label"
-											>Nombre: {{$medico->nombre}}</label
+											>Tipo de Urgencia: {{$categoria->tipo_urgencia}}</label
 										>
 									</div>
+
 									<div class="form-group">
 										<label for="message-text" class="col-form-label"
-											>Apellido: {{$medico->apellido}}</label
-										>
-									</div>
-									<div class="form-group">
-										<label for="message-text" class="col-form-label"
-											>DNI: {{$medico->dni}}</label
-										>
-									</div>
-									<div class="form-group">
-										<label for="message-text" class="col-form-label"
-											>Telefono: {{$medico->telefono}}</label
+											>Descripciรณn: {{$categoria->descripcion_urgencia}}</label
 										>
 									</div>
 								</form>
@@ -240,38 +189,24 @@
 						</div>
 					</div>
 				</div>
+
 				<!-------------------->
 				<td>
 					<a
-						data-id="{{$medico->id}}"
+						data-id="{{$categoria->id}}"
 						class="ver"
 						data-toggle="modal"
-						data-target="#myModalEdit_{{$medico->id}}"
+						data-target="#myModalEdit_{{$categoria->id}}"
 						><button type="button" class="btn btn-edit" id="botonCentrar">
 						<i class="material-icons dp48">border_color</i>
-							<!--<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								fill="currentColor"
-								class="bi bi-pencil-square"
-								viewBox="0 0 16 16"
-							>
-								<path
-									d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
-								></path>
-								<path
-									fill-rule="evenodd"
-									d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
-								></path>
-							</svg>-->
+							
 						</button
 					></a>
 				</td>
 				<!-- Modal Edit -->
 				<div
 					class="modal fade"
-					id="myModalEdit_{{$medico->id}}"
+					id="myModalEdit_{{$categoria->id}}"
 					tabindex="-1"
 					role="dialog"
 					aria-labelledby="exampleModalLabel"
@@ -281,77 +216,46 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">
-									Editar Medico {{$medico->id}}
+									Editar categoria {{$categoria->id}}
 								</h5>
 							</div>
 							<div class="modal-body">
 								<form
 									method="POST"
-									action="{{ route('medico.update',$medico->id) }}"
+									action="{{ route('categoria.update',$categoria->id) }}"
 									role="form"
 								>
 									@method('put')@csrf
 									<div class="form-group">
-										<label class="control-label col-sm-2" for="nombre"
-											>Nombre:</label
+										<label class="control-label " for="nombre"
+											>Tipo de Urgenica:</label
 										>
 										<div class="col-sm-10">
 											<input
 												type="text"
 												class="form-control"
-												placeholder="{{$medico->nombre}}"
-												name="nombre"
-												value="{{$medico->nombre}}"
+												placeholder="{{$categoria->tipo_urgencia}}"
+												name="tipo_urgencia"
+												value="{{$categoria->tipo_urgencia}}"
 											/>
 										</div>
 										<div class="form-group">
-											<label class="control-label col-sm-2" for="apellido"
-												>Apellido:</label
+											<label class="control-label " for="apellido"
+												>Descripciรณn</label
 											>
 											<div class="col-sm-10">
 												<input
 													type="text"
 													class="form-control"
 													id="apellido"
-													placeholder="{{$medico->apellido}}"
-													name="apellido"
-													value="{{$medico->apellido}}"
+													placeholder="{{$categoria->descripcion_urgencia}}"
+													name="descripcion_urgencia"
+													value="{{$categoria->descripcion_urgencia}}"
 												/>
 											</div>
 										</div>
 
-										<div class="form-group">
-											<label class="control-label col-sm-2" for="dni"
-												>Dni:</label
-											>
-											<div class="col-sm-10">
-												<input
-													type="text"
-													class="form-control"
-													id="dni"
-													placeholder="{{$medico->dni}}"
-													name="dni"
-													value="{{$medico->dni}}"
-												/>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label class="control-label col-sm-2" for="telefono"
-												>Teléfono:</label
-											>
-											<div class="col-sm-10">
-												<input
-													type="text"
-													class="form-control"
-													id="telefono"
-													placeholder="{{$medico->telefono}}"
-													name="telefono"
-													value="{{$medico->telefono}}"
-												/>
-											</div>
-										</div>
-
+										
 										<button type="submit" class="btn btn-info">
 											Guardar
 										</button>
@@ -375,7 +279,7 @@
 				<!-------------------->
 
 				<td>
-					<form method="POST" action="/medico/{{$medico->id}}">
+					<form method="POST" action="/categoria/{{$categoria->id}}">
 						<!--<input class="btn btn-danger" type="submit" value="Borrar" />-->
 						<button id="botonCentrar" class="btn btn-delete" type="submit">
 							<i class="material-icons dp48">remove_circle_outline</i>
@@ -391,10 +295,9 @@
 		</tbody>
 	</table>
 </div>
-
 <script>
 	$(document).ready(function () {
-		var t = $('#tabla_medicos').DataTable({
+		var t = $('#tabla_categorias').DataTable({
 			language: {
 				url: '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json',
 			},
@@ -413,9 +316,16 @@
 	table {
 		background-color: white;
 	}
+
 	.logo {
 		width: 150px;
 		height: 150px;
+	}
+
+	img {
+		border-radius: 5px;
+		width: 50px;
+		height: 50px;
 	}
 </style>
 @endsection

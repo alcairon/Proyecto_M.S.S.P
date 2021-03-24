@@ -14,7 +14,7 @@ class Tratamiento extends Model
 	 protected $primaryKey = 'id';
 	
 	
-	public $timetamps = false;
+	public $timestamps = false;
 	
 	public function urgencias()
 		{

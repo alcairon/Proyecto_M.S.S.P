@@ -1,9 +1,9 @@
 
-@extends('layouts.app')
+@extends('layouts.appVista')
 
 @section('content')
 <div class="container" id ="container">
-    <div class="row justify-content-center">
+    <div class="justify-content-center">
 
 		<img class="inicioUrgencia" src='img/InicioSitioWeb.png'>
 		
@@ -15,7 +15,6 @@
 <style>
 	.logout {
 		padding-right:10px;
-		text-align:right;
 		font-weight: bold;
 		
 	}
@@ -27,9 +26,9 @@
 	}
 	
 	.inicioUrgencia{
-		width:90%;
+		width:60%;
 		height: auto;
- 
+ 		margin-left:20%;
 	}
 	
 	/*

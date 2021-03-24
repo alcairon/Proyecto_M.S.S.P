@@ -18,7 +18,7 @@ class Urgencia extends Model
 		'f_entrada' => 'date:Y-m-d',
 	];
 	
-	public $timetamps = false;
+	public $timestamps = false;
 	
 	protected $primaryKey = 'id';
 	

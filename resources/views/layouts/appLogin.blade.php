@@ -9,24 +9,29 @@
 
 
 <style>
-		body{
-		background-color:lightblue;
-	}
 		.logoApp{
-		width:30%;
+		width:80%;
 		height:auto;
-		margin-left:35%;
-		margin-bottom:4%;
+		padding-top:4%;
+		padding-bottom:4%;
 		margin-top:4%;
+		background-color:white;
+			    border-radius: 10%;
 	}
-	
+	.conter_welcom{
+		
+    margin-top: 20%;
 
+	}
 	
 	body{
 		/*background-color:lightblue;*/
-		background-image:url("img/fondoWeb.jpg");
+		background-image:url("img/OtroFondo.jpg");
 		background-size:100% 100%;
 		background-repeat:no-repeat;
+	}
+	h2{
+		font-weight: bold;
 	}
 </style>
 	  
@@ -44,7 +49,7 @@
 		</div>
 	@endif
 	<div>
-		<img class="logoApp" src='/img/Medical services storage program.png'>
+		
 		@yield("content")
 	</div>
 </div>

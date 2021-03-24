@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+
 use Illuminate\Http\Request;
 
-
-class CategoriasController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-	public function __construct()
+		public function __construct()
     {
         $this->middleware('auth');
     }
 	
     public function index()
     {
-        $categoria=Categoria::all();
+         $categoria=Categoria::all();
 		
 		return view("categoria.index",compact("categoria"));
     }
@@ -32,7 +32,7 @@ class CategoriasController extends Controller
      */
     public function create()
     {
-        return view("categoria.create");
+        //
     }
 
     /**
@@ -43,7 +43,7 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        $datos=$request->all();
+         $datos=$request->all();
 		
 		Categoria::create($datos);
 		return redirect('/categoria');
@@ -57,8 +57,7 @@ class CategoriasController extends Controller
      */
     public function show($id)
     {
-        $categoria = Categoria::find($id);
-		return view("categoria.show", compact ("categoria"));
+        //
     }
 
     /**
@@ -81,9 +80,8 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $datos=$request->all;
-		$categoria = Categoria::find($id);
-		$categoria->update($datos);
+        $datos=$request->all();
+		Categoria::find($id)->update($datos);
 		
 		return redirect ("categoria");
     }

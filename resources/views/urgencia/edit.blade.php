@@ -1,4 +1,4 @@
-@extends("layouts.app2") @section("content")
+@extends("layouts.appVista") @section("content")
 
 <h1>Editar Urgencia</h1>
 <form method="POST" action="{{ route('urgencia.update',$urgencia->id) }}">

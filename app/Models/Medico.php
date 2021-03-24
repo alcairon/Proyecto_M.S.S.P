@@ -14,7 +14,9 @@ class Medico extends Model
 	 protected $primaryKey = 'id';
 	
 	
-	public $timetamps = false;
+	const UPDATED_AT = null;
+	const CREATE_AT = null;
+	public $timestamps = false;
 	
 	
 	public function urgencias()

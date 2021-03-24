@@ -1,5 +1,5 @@
 
-@extends("layouts.app3")
+@extends("layouts.appVista")
 
 @section("content")
 <div class="modal fade" id="show">

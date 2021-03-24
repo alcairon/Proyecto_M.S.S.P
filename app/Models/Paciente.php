@@ -15,7 +15,7 @@ class Paciente extends Model
 	
 	
 	
-	public $timetamps = false;
+	public $timestamps = false;
 	
 
 	
