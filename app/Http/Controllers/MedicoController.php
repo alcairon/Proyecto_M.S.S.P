@@ -46,7 +46,7 @@ class MedicoController extends Controller
         $datos=$request->all();
 		
 		Medico::create($datos);
-		return redirect('/medico');
+		return redirect('/medico')->with("anadir_medico",'¡Se a guardado con exito!.');
     }
 
     /**
@@ -84,7 +84,7 @@ class MedicoController extends Controller
 		$datos = $request->all();
 		Medico::findOrFail($id)->update($datos);
 		
-		return redirect ("medico");
+		return redirect ("medico")->with("editar_medico",'Se a editado un medico correctamente!.');
     }
 
     /**
@@ -98,6 +98,6 @@ class MedicoController extends Controller
         $medico = Medico::find($id);
 		$medico->delete();
 		
-		return redirect('medico');
+		return redirect('medico')->with("eliminar",'ok');
     }
 }

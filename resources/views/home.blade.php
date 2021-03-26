@@ -1,5 +1,5 @@
 
-@extends('layouts.appVista')
+@extends('layouts.appHome')
 
 @section('content')
 <div class="container" id ="container">
@@ -26,9 +26,9 @@
 	}
 	
 	.inicioUrgencia{
-		width:60%;
+		width:75%;
 		height: auto;
- 		margin-left:20%;
+ 		margin-left:10%;
 	}
 	
 	/*

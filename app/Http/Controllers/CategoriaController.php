@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreTipoUrgencia;
 
 class CategoriaController extends Controller
 {
@@ -41,12 +42,12 @@ class CategoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTipoUrgencia $request)
     {
          $datos=$request->all();
 		
 		Categoria::create($datos);
-		return redirect('/categoria');
+		return redirect('/categoria')->with("anadir_categoria",'¡Se a guardado con exito!.');
     }
 
     /**
@@ -83,7 +84,7 @@ class CategoriaController extends Controller
         $datos=$request->all();
 		Categoria::find($id)->update($datos);
 		
-		return redirect ("categoria");
+		return redirect ("categoria")->with("editar_categoria",'Se a editado una categoria correctamente!.');
     }
 
     /**
@@ -97,6 +98,6 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id);
 		$categoria->delete();
 		
-		return redirect('categoria');
+		return redirect('categoria')->with("eliminar",'ok');
     }
 }

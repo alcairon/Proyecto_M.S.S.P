@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUrgencia extends FormRequest
+class StoreTipoUrgencia extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +26,9 @@ class StoreUrgencia extends FormRequest
          return [
 			
 			
-			'f_entrada'=>'required','date',
-			'categorias'=>'required',
-			'tratamientos' => 'required',
-			 'pacientes'=>'required',
-			 'medicos'=>'required',
+			'tipo_urgencia'=>'required',
+			'descripcion_urgencia'=>'required',
+			
 			
 		];
 		
@@ -40,8 +38,8 @@ class StoreUrgencia extends FormRequest
 	public function messages()
 	{
 		return[
-		
-			'Falta escribir informaciรณn o estรก mal escrita'
+			
+			//
 		];
 	}
 	

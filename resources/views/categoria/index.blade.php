@@ -91,7 +91,7 @@
 
 	<!-------------------->
 
-	<table id="tabla_categorias" class="table table-bordered table-striped">
+	<table id="tabla_categorias" class="table table-bordered table-striped" style="width: 100%;">
 		<thead>
 			<tr>
 				<th hidden>Id</th>
@@ -100,7 +100,7 @@
 
 				<th>Tipo de Urgencia</th>
 
-				<th>Descripciรณn</th>
+				<th>Descripción</th>
 
 				<th>Ver</th>
 
@@ -123,7 +123,7 @@
 				<td>{{$categoria->descripcion_urgencia}}</td>
 
 
-				<td>
+				<td style="text-align: center;vertical-align: middle">
 					<a
 						data-id="{{$categoria->id}}"
 						class="ver"
@@ -191,7 +191,7 @@
 				</div>
 
 				<!-------------------->
-				<td>
+				<td style="text-align: center;vertical-align: middle"> 
 					<a
 						data-id="{{$categoria->id}}"
 						class="ver"
@@ -278,8 +278,8 @@
 
 				<!-------------------->
 
-				<td>
-					<form method="POST" action="/categoria/{{$categoria->id}}">
+				<td style="text-align: center;vertical-align: middle">
+					<form method="POST" action="/categoria/{{$categoria->id}}"  class="d-inline formulario-eliminar">
 						<!--<input class="btn btn-danger" type="submit" value="Borrar" />-->
 						<button id="botonCentrar" class="btn btn-delete" type="submit">
 							<i class="material-icons dp48">remove_circle_outline</i>
@@ -295,14 +295,16 @@
 		</tbody>
 	</table>
 </div>
+
+
 <script>
 	$(document).ready(function () {
 		var t = $('#tabla_categorias').DataTable({
+			responsive: true,
 			language: {
 				url: '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json',
 			},
 		});
-
 		t.on('order.dt search.dt', function () {
 			t.column(0, { search: 'applied', order: 'applied' })
 				.nodes()
@@ -312,6 +314,62 @@
 		}).draw();
 	});
 </script>
+
+<!-------------------Confirmación de Añadida------------------------->
+@if(Session::has('anadir_categoria'))
+<script>
+	toastr.success("{!!Session::get('anadir_categoria')!!}");
+</script>
+@endif 
+
+<!-------------------Confirmación de Edición------------------------->
+
+@if(Session::has('editar_categoria'))
+<script>
+	toastr.success("{!!Session::get('editar_categoria')!!}");
+</script>
+@endif 
+
+
+
+<!-------------------Borrar Con Confirmación------------------------->
+
+@if(Session::has('eliminar')== 'ok')
+	<script>
+		Swal.fire(
+			  '¡Borrado!',
+			  'El elemento ha sido borrado con exito.',
+			  'success'
+			)
+	</script>
+@endif
+<script>
+	$('.formulario-eliminar').submit(function(e){
+		e.preventDefault();
+		
+		Swal.fire({
+		  title: '¿Estás seguro que quieres eliminarlo?',
+		  text: "¡Luego no se podra cambiar!",
+		  icon: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Si, borralo!'
+		}).then((result) => {
+		if (result.value){
+			
+			this.submit();
+			
+			}
+		})
+		
+	});
+
+</script>
+
+
+
+
 <style>
 	table {
 		background-color: white;

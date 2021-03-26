@@ -46,7 +46,7 @@ class PacienteController extends Controller
         $datos=$request->all();
 		
 		Paciente::create($datos);
-		return redirect('/paciente');
+		return redirect('/paciente')->with("anadir_paciente",'¡Se a guardado con exito!.');
     }
 
     /**
@@ -84,7 +84,7 @@ class PacienteController extends Controller
         $datos = $request->all();
 		Paciente::findOrFail($id)->update($datos);
 		
-		return redirect ("paciente");
+		return redirect ("paciente")->with("editar_paciente",'Se a editado a un paciente correctamente!.');
     }
 
     /**
@@ -98,6 +98,6 @@ class PacienteController extends Controller
         $paciente = Paciente::find($id);
 		$paciente->delete();
 		
-		return redirect('paciente');
+		return redirect('paciente')->with("eliminar",'ok');
     }
 }

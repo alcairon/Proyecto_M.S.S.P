@@ -50,7 +50,7 @@ class UrgenciaController extends Controller
         $datos=$request->all();
 		
 		Urgencia::create($datos);
-		return redirect('/urgencia');
+		return redirect('/urgencia')->with("anadir_urgencia",'Se ha guardado con exito!.');
     }
 
     /**
@@ -89,7 +89,7 @@ class UrgenciaController extends Controller
         $datos=$request->all();
 		Urgencia::find($id)->update($datos);
 		
-		return redirect ("urgencia");
+		return redirect ("urgencia")->with("editar_urgencia",'Se ha editado una urgencia correctamente!.');
     }
 
     /**
@@ -103,9 +103,9 @@ class UrgenciaController extends Controller
         $urgencia = Urgencia::find($id);
 		$urgencia->delete();
 		
-		return redirect('urgencia');
+		return redirect('urgencia')->with("eliminar",'ok');
     }
 	
-	
+	/*->with("borrar_urgencia",'Se a borrado una urgencia correctamente!.')*/
 	
 }
