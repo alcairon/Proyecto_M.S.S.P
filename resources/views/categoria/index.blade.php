@@ -56,7 +56,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="control-label " for="descripcion_urgencia">Descripciรณn:</label>
+							<label class="control-label " for="descripcion_urgencia">Descripción:</label>
 							<div class="col-sm-10">
 								<input
 									type="text"
@@ -171,7 +171,7 @@
 
 									<div class="form-group">
 										<label for="message-text" class="col-form-label"
-											>Descripciรณn: {{$categoria->descripcion_urgencia}}</label
+											>Descripción: {{$categoria->descripcion_urgencia}}</label
 										>
 									</div>
 								</form>
@@ -241,7 +241,7 @@
 										</div>
 										<div class="form-group">
 											<label class="control-label " for="apellido"
-												>Descripciรณn</label
+												>Descripción</label
 											>
 											<div class="col-sm-10">
 												<input

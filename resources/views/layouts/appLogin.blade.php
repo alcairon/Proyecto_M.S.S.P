@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+    	<link rel="shortcut icon" href="../img/minilogo.png" type="image/png">
 		<title>M.S.S.P</title>
 		<meta charset="UTF-8" />
 		<meta name="title" content="Título de la WEB" />

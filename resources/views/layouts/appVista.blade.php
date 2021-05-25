@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+    	<link rel="shortcut icon" href="../img/minilogo.png" type="image/png">
 		<title>M.S.S.P</title>
 		<meta charset="UTF-8" />
 		<meta name="title" content="Título de la WEB" />
@@ -38,7 +39,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css"
 		/>
 
-		<link rel="stylesheet" href="responsive-nav.css" />
+		
 
 		<!--------------------------Script---------------------------------------->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -375,6 +376,7 @@
 	  -ms-transition: left 0.25s ease;
 	  -o-transition: left 0.25s ease;
 	  transition: left 0.25s ease;
+		background:#323057;
 	}
 
 	.nav-bg-xbootstrap {
@@ -382,11 +384,11 @@
 	  vertical-align: middle;
 	  width: 100%;
 	  height: 50px;
-	  margin: 0;
+	  margin-bottom: 10%;
 	  position: absolute;
 	  top: 0px;
 	  left: 0px;
-	  background: #03A9F4;
+	  background:#323057;
 	  padding: 12px 0 0 10px;
 	  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 		z-index:2000;
@@ -422,7 +424,7 @@
 
 	.nav-xbootstrap li a {
 	  display: block;
-	  color: #505050;
+	  color: white;
 	  font-weight: 600;
 	}
 
@@ -442,7 +444,7 @@
 	}
 
 	.nav-xbootstrap li ul.dropdown li:hover a {
-	  background: rgba(0,0,0,.1); !important;
+	 /background: rgba(0,0,0,.1); !important;
 	  color: #fff !important;
 	}
 

@@ -27,10 +27,10 @@ class StoreUrgencia extends FormRequest
 			
 			
 			'f_entrada'=>'required','date',
-			'categorias'=>'required',
+			/*'categorias'=>'required',
 			'tratamientos' => 'required',
 			 'pacientes'=>'required',
-			 'medicos'=>'required',
+			 'medicos'=>'required',*/
 			
 		];
 		
@@ -41,7 +41,7 @@ class StoreUrgencia extends FormRequest
 	{
 		return[
 		
-			'Falta escribir informaciรณn o estรก mal escrita'
+			'Falta informacion o esta erronea'
 		];
 	}
 	

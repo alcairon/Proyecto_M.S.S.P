@@ -1,11 +1,6 @@
 
 		.container {
-		max-width: 1140000px;
-	    padding-right: 0px;
-	    padding-left: 0px;
-	    /*margin-right: auto;*/
-	    margin-left: auto;
-	}
+	
 		}
 
 		/*
@@ -278,6 +273,7 @@
 			width: 100%;
 			height: auto;
 			margin-bottom:1%;
+			border-radius:10%;
 
 
 		}
@@ -307,6 +303,7 @@
 			background-color:white;
 			border-radius:1%;
 			margin-bottom:2%;
+			    margin-top: 8%;
 
 		}
 

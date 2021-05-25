@@ -39,7 +39,11 @@ class StorePaciente extends FormRequest
 	{
 		return[
 			
-			//
+			
+			'nombre.required' => 'Es necesario rellenar el campo Nombre',
+			'apellido.required' => 'Es necesario rellenar el campo Apellido',
+			'dni.required' => 'Es necesario rellenar el campo DNI',
+			'telefono.required' => 'Es necesario rellenar el campo Telefono'
 		];
 	}
 	

@@ -124,7 +124,7 @@
 	<table id="tabla_urgencias" class="table table-bordered table-striped" style="width: 100%;">
 		<thead>
 			<tr>
-				<th></th>
+				<th hidden></th>
 
 				<th>Id</th>
 
@@ -154,7 +154,7 @@
 			@foreach ($urgencia as $urgencia)
 
 			<tr>
-				<td></td>
+				<td hidden></td>
 
 				<td>{{$urgencia->id}}</td>
 

@@ -29,6 +29,8 @@
 		width:75%;
 		height: auto;
  		margin-left:10%;
+		margin-top:15%;
+		z-index: 2000;
 	}
 	
 	/*
