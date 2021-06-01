@@ -137,10 +137,8 @@
 				<th>Paciente</th>
 
 				<th>Medico</th>
-
-				<!--<th>Hora</th>
-
-				<th>Tipo</th>-->
+				
+				<th>Estado</th>
 
 				<th>Opciones</th>
 
@@ -167,6 +165,8 @@
 				<td>{{$urgencia ->pacient->nombre}}</td>
 
 				<td>{{$urgencia->doctor->nombre}}</td>
+				
+				<th>{{$urgencia->estado}}</th>
 
 				<td style="text-align: center; vertical-align: middle;">
 					<a

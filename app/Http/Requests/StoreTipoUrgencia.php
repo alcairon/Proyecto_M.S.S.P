@@ -40,8 +40,8 @@ class StoreTipoUrgencia extends FormRequest
 		return[
 			
 			
-			'tipo_urgencia.required' => 'Es necesario rellenar el campo Nombre',
-			'descripcion_urgencia.required' => 'Es necesario rellenar el campo Apellido'
+			'tipo_urgencia.required' => 'Es necesario rellenar el campo Tipo de Urgencia',
+			'descripcion_urgencia.required' => 'Es necesario rellenar el campo Descripción'
 		];
 	}
 	

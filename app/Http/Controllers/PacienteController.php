@@ -46,7 +46,7 @@ class PacienteController extends Controller
         $datos=$request->all();
 		
 		Paciente::create($datos);
-		return redirect('/paciente')->with("anadir_paciente",'¡Se a guardado con exito!.');
+		return redirect('/paciente')->with("anadir_paciente",'ยกSe a guardado con exito!.');
     }
 
     /**
@@ -79,7 +79,7 @@ class PacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StorePaciente $request, $id)
     {
         $datos = $request->all();
 		Paciente::findOrFail($id)->update($datos);

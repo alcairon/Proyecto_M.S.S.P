@@ -9,6 +9,7 @@ use App\Models\Paciente;
 use App\Models\Medico;
 use App\Models\Categoria;
 use App\Models\Tratamiento;
+use Carbon\Carbon;
 
 class UrgenciaController extends Controller
 {
@@ -24,7 +25,8 @@ class UrgenciaController extends Controller
 
     public function index()
     {	
-	return view("urgencia.index", [ 'urgencia' => Urgencia::all(), 'pacientes' => Paciente::all() ,'medicos' => Medico::all(),'categorias' => Categoria::all(), 'tratamientos' => 	Tratamiento::all() ]);
+		
+		return view("urgencia.index", [ 'urgencia' => Urgencia::all(), 'pacientes' => Paciente::all() ,'medicos' => Medico::all(),'categorias' => Categoria::all(), 'tratamientos' => 	Tratamiento::all() ]);
 		
 		
     }
@@ -47,6 +49,7 @@ class UrgenciaController extends Controller
      */
     public function store(StoreUrgencia $request)
     {
+		// dd($request);
         $datos=$request->all();
 		
 		Urgencia::create($datos);
@@ -84,7 +87,7 @@ class UrgenciaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreUrgencia $request, $id)
     {
         $datos=$request->all();
 		Urgencia::find($id)->update($datos);

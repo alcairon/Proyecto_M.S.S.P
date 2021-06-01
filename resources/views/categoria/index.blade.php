@@ -62,7 +62,7 @@
 									type="text"
 									class="form-control"
 									id="descripcion_urgencia"
-									placeholder="Descripciรณn"
+									placeholder="Descripción"
 									name="descripcion_urgencia"
 								/>
 							</div>

@@ -47,7 +47,7 @@ class CategoriaController extends Controller
          $datos=$request->all();
 		
 		Categoria::create($datos);
-		return redirect('/categoria')->with("anadir_categoria",'¡Se a guardado con exito!.');
+		return redirect('/categoria')->with("anadir_categoria",'ยกSe a guardado con exito!.');
     }
 
     /**
@@ -79,7 +79,7 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreTipoUrgencia $request, $id)
     {
         $datos=$request->all();
 		Categoria::find($id)->update($datos);

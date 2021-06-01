@@ -41,6 +41,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css"
 		/>
 
+
 		<!--------------------------Script---------------------------------------->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -146,64 +147,6 @@
 			</div>
 			@endif
 
-			<!--			
-			<nav id="barraNavegacion" class="nav-collapse">
-				<ul class="menu">
-					<li>
-						<a href="/">
-							<img class="logoApp" src="/img/minilogo.png" />
-						</a>
-					</li>
-
-					<li>
-						<a href="/urgencia">Urgencias</a>
-					</li>
-
-					<li><a>|</a></li>
-
-					<li>
-						<a href="/medico">Médicos</a>
-					</li>
-
-					<li><a>|</a></li>
-
-					<li>
-						<a href="/paciente">Pacientes</a>
-					</li>
-
-					<li><a>|</a></li>
-
-					<li>
-						<a href="/categoria">Tipos De Urgencias</a>
-					</li>
-
-					<li class="dropdown">
-						<a
-							href="#"
-							class="dropdown-toggle"
-							data-toggle="dropdown"
-							role="button"
-							aria-expanded="false"
-						>
-							{{ Auth::user()->name}}
-							<span class="caret"></span
-						></a>
-						<ul class="dropdown-menu" role="menu">
-							<li class="minilist">
-								<a
-									href="{{ route('logout')}}"
-									onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-									>{{ __('Salir') }}</a
-								>
-								<form id="logout-form" method="POST" action="{{ route('logout')}}">
-									@csrf
-								</form>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
--->
 			<div class="contenedorCentral">
 				<div class="col-md-8"></div>
 
@@ -212,7 +155,6 @@
 		</div>
 	</body>
 </html>
-
 
 <style>
 
@@ -241,7 +183,7 @@
 	.nav-xbootstrap {
 	  display: block;
 	  margin-top:2%;
-
+	  margin-bottom: 5%;
 	  background: white;
 	  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	  border-radius: 3px;
@@ -378,6 +320,7 @@
 	  -ms-transition: left 0.25s ease;
 	  -o-transition: left 0.25s ease;
 	  transition: left 0.25s ease;
+		background:#323057;
 	}
 
 	.nav-bg-xbootstrap {
@@ -385,11 +328,11 @@
 	  vertical-align: middle;
 	  width: 100%;
 	  height: 50px;
-	  margin-bottom:10%;
+	  margin-bottom: 10%;
 	  position: absolute;
 	  top: 0px;
 	  left: 0px;
-	  background: #03A9F4;
+	  background:#323057;
 	  padding: 12px 0 0 10px;
 	  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 		z-index:2000;
@@ -425,7 +368,7 @@
 
 	.nav-xbootstrap li a {
 	  display: block;
-	  color: #505050;
+	  color: white;
 	  font-weight: 600;
 	}
 
@@ -445,7 +388,7 @@
 	}
 
 	.nav-xbootstrap li ul.dropdown li:hover a {
-	  background: rgba(0,0,0,.1); !important;
+	 /background: rgba(0,0,0,.1); !important;
 	  color: #fff !important;
 	}
 
@@ -479,7 +422,6 @@
 	  right: 0;
 	  left: 0;
 	}
-		 
 </style>
 <script>
 	$(document).ready(function () {

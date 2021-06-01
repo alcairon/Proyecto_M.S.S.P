@@ -46,7 +46,7 @@ class MedicoController extends Controller
         $datos=$request->all();
 		
 		Medico::create($datos);
-		return redirect('/medico')->with("anadir_medico",'¡Se a guardado con exito!.');
+		return redirect('/medico')->with("anadir_medico",'ยกSe a guardado con exito!.');
     }
 
     /**
@@ -79,7 +79,7 @@ class MedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreMedico $request, $id)
     {
 		$datos = $request->all();
 		Medico::findOrFail($id)->update($datos);

@@ -6,6 +6,8 @@ use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Paciente;
+use Carbon\Carbon;
+
 
 class Urgencia extends Model
 {
@@ -23,11 +25,16 @@ class Urgencia extends Model
 	protected $primaryKey = 'id';
 	
 
+	public function getEstadoAttribute()
+	{
+		return $this->f_entrada > Carbon::now() ? "En espera" : "Finalizado";
+	}
+		
 	
 	public function pacient()
-		{
-			return $this->belongsTo(Paciente::class, 'paciente');
-		}
+	{
+		return $this->belongsTo(Paciente::class, 'paciente');
+	}
 	
 	public function categoria()
 	{
@@ -42,5 +49,10 @@ class Urgencia extends Model
 	public function doctor()
 	{
 		return $this->belongsTo(Medico::class,'medico');
+	}
+	
+	public static function getUrgenciasEnEspera()
+	{
+		return Urgencia::select()->where("f_entrada",">",Carbon::now())->get();
 	}
 }

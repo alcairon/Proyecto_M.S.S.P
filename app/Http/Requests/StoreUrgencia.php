@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Carbon\Carbon;
+
 
 class StoreUrgencia extends FormRequest
 {
@@ -23,14 +25,15 @@ class StoreUrgencia extends FormRequest
      */
     public function rules()
     {
+		$f_actual = Carbon::now();
          return [
-			
-			
-			'f_entrada'=>'required','date',
+
+			'f_entrada'=> 'required|after:today',
 			/*'categorias'=>'required',
 			'tratamientos' => 'required',
 			 'pacientes'=>'required',
 			 'medicos'=>'required',*/
+
 			
 		];
 		
@@ -41,8 +44,21 @@ class StoreUrgencia extends FormRequest
 	{
 		return[
 		
-			'Falta informacion o esta erronea'
+			/*'f_entrada.required' => 'Es necesario rellenar el campo Fecha',
+			'categorias.required' => 'Es necesario rellenar el campo Tipo de Urgencia',
+			'tratamientos.required' => 'Es necesario rellenar el campo Tratamiento',
+			'pacientes.required' => 'Es necesario rellenar el campo Paciente',
+			'medicos.required' => 'Es necesario rellenar el campo Médico'*/
+
+			
+			'Falta informacion o la fecha tiene que ser mayor a la actual'
 		];
 	}
 	
 }
+
+
+
+
+
+
